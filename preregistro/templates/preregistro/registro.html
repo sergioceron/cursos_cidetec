@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{%block estilos%}
+{% load staticfiles %}<link rel="stylesheet" type="text/css" href="{% static 'preregistro/styles/registrostyle.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<a id="volver" href="../preregistro"> &lt;&lt; Volver a Cursos </a>
+<h1>Prerregistro al curso de: {{curso.nombre}} </h1>
+
+<form action="{% url 'registro' curso.id %}" method = "post">
+	{% csrf_token %}
+<table>
+	{{formularioAlumno}}
+</table>
+	<input type="submit" value="Registrar">
+</form>
+
+
+{% endblock %}

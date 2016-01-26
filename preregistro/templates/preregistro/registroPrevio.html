@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+
+{%block estilos%}
+{% load staticfiles %}<link rel="stylesheet" type="text/css" href="{% static 'preregistro/styles/registrostyle.css' %}">
+{% endblock %}
+ 
+{% block content %}
+                                                                           
+<p id="mensaje"> Su prerregistro al curso
+    de <span id="curso">{{ curso.nombre }}</span> con el correo <span id="curso"> {{correo_electronico}} </span> ya ha sido hecho con anterioridad.
+<br> Gracias.
+
+<br>
+<br><a href = '../preregistro'> Volver </a>
+
+</p>                                
+
+                                                                           
+{% endblock %}

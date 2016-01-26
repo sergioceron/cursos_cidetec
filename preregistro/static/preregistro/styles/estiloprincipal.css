@@ -1,0 +1,26 @@
+
+#tabla_cursos th{
+	background-color : #7F7F7F;
+	font-size : 15px;
+
+}
+
+
+#tabla_cursos tr:nth-child(odd){
+	background-color : #E5E5E5;
+}
+
+#tabla_cursos tr:nth-child(even){
+	background-color : #BFBFBF;
+}
+
+
+a:hover{
+	font-size : 13px;
+	font-weight : bold;
+}
+
+a:visited{
+	color : #0000FF;
+
+}

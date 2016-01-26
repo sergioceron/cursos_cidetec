@@ -1,0 +1,5 @@
+[client]
+database = cursos_cidetec_dev
+user = andres
+password = Holamundo123
+default-character-set = utf8

@@ -1,0 +1,21 @@
+#volver{
+	position : relative;
+	left : -450px;
+	top : 30px;
+	font-weight : bold;
+	font-size : 14px;
+}
+
+#volver:hover{
+
+	font-size : 16px;
+}
+
+#mensaje{
+	font-size : 16px;
+}
+
+#correo,#curso{
+	font-weight : bold;
+
+}

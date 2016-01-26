@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		
+		<meta name="description" content="Cursos CIDETEC IPN">
+		<meta name="keywords" content="Cursos,CIDETEC,IPN">
+		<meta name="author" content="Andres">
+		<meta name="viewport" content="width=device-width; initial-scale=1.0">
+		
+		{% load staticfiles %}
+
+		<link rel="stylesheet" type="text/css" href ="{% static 'preregistro/styles/style.css' %}"/>
+		{% block estilos %} {% endblock %}
+		<link rel="shortcut icon" href="{% static 'preregistro/images/cidetec_escudo.ico' %}">
+		<title>{% block title %} Cursos CIDETEC {% endblock %} </title>
+
+	</head>
+
+	<body>
+		<header>
+			<div id="cabecera">
+				<a href="http://www.cidetec.ipn.mx">
+				<img id ="escudo_cidetec" src= "{% static 'preregistro/images/cidetec_escudo.png' %}">
+				<p id="cidetec">
+					Centro de 
+			   		<br> INNOVACIÓN y DESARROLLO
+			   		<br> Tecnológico en Cómputo
+				</p>
+				</a>
+				<a href="http://www.ipn.mx">
+				<p id="ipn"> INSTITUTO POLITÉCNICO NACIONAL 
+						<br><span id="lema"> "La técnica al servicio de la patria" </span> 
+				</p>
+				<img id="escudo_ipn" src = "{% static 'preregistro/images/logoipn.jpg'%}">
+        	</a> 
+			</div>
+		</header>
+		
+		<div id="contenido">
+			{% block content %} {% endblock %}
+			
+		</div>
+		
+	<footer>
+				<div id = "pie">
+					
+					<p id="infopie">
+						<a href="http://www.ipn.mx">
+						<span id="ipn_pie"> INSTITUTO POLITÉCNICO NACIONAL </span>
+						</a>
+						<br>D.R. Centro de Innovación y Desarrollo Tecnológico en	Cómputo (CIDETEC),
+						<br>Av."Juan de Dios Bátiz" s/n esq. Miguel Othón de Mendizábal, Col. Nueva Industrial Vallejo, Del. Gustavo A. Madero, México, D.F., C.P. 07700.
+						<br>Tel. 5729-6000 Ext. 52516,cidetec@ipn.mx, 2009-2010.
+						</p>
+					
+				</div>
+		</footer>
+	</body>
+</html>

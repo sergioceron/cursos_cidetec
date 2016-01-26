@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{%block estilos%}
+{% load staticfiles %}<link rel="stylesheet" type="text/css" href="{% static 'preregistro/styles/estiloprincipal.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<h1>Cursos CIDETEC</h1>
+{% if ultimos_cursos_lista %}
+	<table id="tabla_cursos">
+		<tr>
+			<th>Nombre</td>
+			<th>Descripcion</td>
+			<th>Prerrequisitos</td>
+			<th>Fecha de Inicio</td>
+			<th>N&uacute;mero de Horas</td>
+			<th>Costo Alumno IPN </td>
+			<th>Costo Empleado IPN </td>
+			<th>Costo P&uacute;blico en General </td>
+			<th>Modalidad</td>
+			<th>Temario</td>
+		<tr>
+		{% for curso in ultimos_cursos_lista %}
+		<tr>
+			<td>{{ curso.nombre }}</td>
+			<td>{{ curso.descripcion }}</td>
+			<td>{{ curso.preRequisitos}}</td>
+			<td>{{ curso.fechaInicio }}</td>
+			<td>{{curso.numeroHoras}}</td>
+			<td>${{curso.costo_alumno_ipn}}</td>
+			<td>${{curso.costo_empleado_ipn}}</td>
+			<td>${{curso.costo_publico_general}}</td>
+			<td>{% if curso.modalidad  == "SE" %}Semanal{% else %}Sabatino{% endif %}</td>
+			{% if curso.temario %}
+			<td><a href="{{ curso.temario.url }}" target="_blanck">Ver Temario {{curso.nombre}}</a></td>
+			{% else %}
+			<td></td>
+			{% endif %}
+			<td><a href="{% url 'registro' curso.id %}">Registrar</a></td>
+		</tr>
+		{% endfor %}
+		
+	</table>
+	{% else %}
+	<p>No hay cursos Disponibles</p>
+{% endif %}
+{% endblock %}
